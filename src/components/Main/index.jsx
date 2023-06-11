@@ -1,12 +1,12 @@
 import Image from "next/image";
 import { Inter } from "next/font/google";
-import styles from "./Main.module.css";
-import { Links } from "./Links";
-import { Headline } from "./Headline";
+import styles from "src/components/Main/Main.module.css";
+import { Links } from "src/components/Links";
+import { Headline } from "src/components/Headline";
 
 const inter = Inter({ subsets: ["latin"] });
 
-export default function Main(props) {
+export function Main(props) {
   return (
     <>
       <main className={`${styles.main} ${inter.className}`}>
