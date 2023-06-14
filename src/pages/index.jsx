@@ -1,33 +1,28 @@
 /* eslint-disable @next/next/no-html-link-for-pages */
-import { useEffect, useCallback } from "react";
-
+import { useEffect, useState } from "react";
 import { Header } from "src/components/Header";
 import { Main } from "src/components/Main";
 
 export default function Home() {
-  const foo = 1;
-
-  const handleClick = useCallback((e) => {
-    console.log(e.target);
-    e.preventDefault();
-    alert(foo);
-  }, []);
+  const [count, setcount] = useState(1);
+  const handleClick = (e) => {
+    //前の状態を受け取って処理する
+    setcount((count) => count + 1);
+    setcount((count) => count + 1);
+  };
   useEffect(() => {
-    console.log("マウント時");
     //基本的にNextjsの管轄内にあるDOMに直接アクセスするのは厳禁
     document.body.style.backgroundColor = "lightblue";
 
     return () => {
-      console.log("アンマウント時");
       document.body.style.backgroundColor = "";
     };
   }, []);
   return (
     <>
       <Header />
-      <a href="/about" onclick={handleClick}>
-        ボタンa
-      </a>
+      <h1>{count}</h1>
+      <button onClick={handleClick}>ボタン</button>
       <Main page="Index" />
     </>
   );
