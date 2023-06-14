@@ -1,5 +1,5 @@
 /* eslint-disable @next/next/no-html-link-for-pages */
-import { useEffect } from "react";
+import { useEffect, useCallback } from "react";
 
 import { Header } from "src/components/Header";
 import { Main } from "src/components/Main";
@@ -26,7 +26,7 @@ export default function Home() {
     <>
       <Header />
       <a href="/about" onclick={handleClick}>
-        ボタン
+        ボタンa
       </a>
       <Main page="Index" />
     </>
