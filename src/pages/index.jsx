@@ -13,14 +13,14 @@ export default function Home() {
       //前の状態を受け取って処理する
       console.log(count);
       if (count < 10) {
-        setcount((count) => count + 1);
+        setcount((prevCount) => prevCount + 1);
       }
     },
     [count]
   );
 
   const handlDisplay = useCallback((e) => {
-    setIsShow((isShow) => !isShow);
+    setIsShow((prevIsShow) => !prevIsShow);
   }, []);
 
   useEffect(() => {
