@@ -2,14 +2,19 @@ import { Inter } from "next/font/google";
 import { Main } from "src/components/Main";
 import { Header } from "src/components/Header";
 import { useBgLightBlue } from "src/hooks/useBgLightBlue";
-import { useCounter } from "src/hooks/useCounter";
-import { useInputArray } from "src/hooks/useInputArray";
 
 const inter = Inter({ subsets: ["latin"] });
 
-export default function About() {
-  const { count, isShow, handleClick, handlDisplay } = useCounter();
-  const { text, array, handleChange, handleAdd } = useInputArray();
+export default function About({
+  count,
+  isShow,
+  handleClick,
+  handlDisplay,
+  text,
+  array,
+  handleChange,
+  handleAdd,
+}) {
   useBgLightBlue();
   return (
     <>
