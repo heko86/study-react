@@ -5,7 +5,7 @@ import { useBgLightBlue } from "src/hooks/useBgColor";
 
 const inter = Inter({ subsets: ["latin"] });
 
-export default function About({
+const About = ({
   doubleCount,
   isShow,
   handleClick,
@@ -14,7 +14,7 @@ export default function About({
   array,
   handleChange,
   handleAdd,
-}) {
+}) => {
   return (
     <>
       <Header />
@@ -32,4 +32,5 @@ export default function About({
       <Main page="About" />
     </>
   );
-}
+};
+export default About;

@@ -2,8 +2,6 @@ import { Inter } from "next/font/google";
 import styles from "./Links.module.css";
 import { useState, useCallback } from "react";
 
-const inter = Inter({ subsets: ["latin"] });
-
 const ITEMS = [
   {
     href: "https://nextjs.org/docs?utm_source=create-next-app&utm_medium=default-template&utm_campaign=create-next-app",
@@ -31,7 +29,7 @@ const ITEMS = [
   },
 ];
 
-export function Links() {
+export const Links = () => {
   const [items, setItems] = useState(ITEMS);
   const handleReduce = useCallback(() => {
     setItems((prevItems) => {
@@ -59,4 +57,4 @@ export function Links() {
       </div>
     </>
   );
-}
+};

@@ -7,7 +7,7 @@ import { useEffect } from "react";
 
 const inter = Inter({ subsets: ["latin"] });
 
-export function Main(props) {
+export const Main = (props) => {
   return (
     <>
       <main className={`${styles.main} ${inter.className}`}>
@@ -32,4 +32,4 @@ export function Main(props) {
       </main>
     </>
   );
-}
+};

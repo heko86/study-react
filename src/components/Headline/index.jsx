@@ -1,7 +1,7 @@
 import Image from "next/image";
 import classes from "./Headline.module.css";
 
-export function Headline(props) {
+export const Headline = (props) => {
   return (
     <>
       <div className={classes.description}>
@@ -20,4 +20,4 @@ export function Headline(props) {
       </div>
     </>
   );
-}
+};

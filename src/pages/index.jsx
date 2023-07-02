@@ -3,7 +3,7 @@
 import { Header } from "src/components/Header";
 import { Main } from "src/components/Main";
 
-export default function Home(props) {
+const Home = (props) => {
   const {
     count,
     isShow,
@@ -33,4 +33,5 @@ export default function Home(props) {
       <Main page="Index" />
     </>
   );
-}
+};
+export default Home;
