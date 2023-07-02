@@ -1,5 +1,6 @@
 import { Inter } from "next/font/google";
 import styles from "./Links.module.css";
+import { useState, useCallback } from "react";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -24,17 +25,24 @@ const ITEMS = [
   },
   {
     href: "https://vercel.com/new?utm_source=create-next-app&utm_medium=default-template&utm_campaign=create-next-app",
-    title: ",Deploy →",
+    title: "Deploy →",
     description:
       "Instantly deploy your Next.js site to a shareable URLwith&nbsp;Vercel.",
   },
 ];
 
 export function Links() {
+  const [items, setItems] = useState(ITEMS);
+  const handleReduce = useCallback(() => {
+    setItems((prevItems) => {
+      return prevItems.slice(0, prevItems.length - 1);
+    });
+  }, []);
   return (
     <>
       <div className={styles.grid}>
-        {ITEMS.map((item) => {
+        <button onClick={handleReduce}>減らす</button>
+        {items.map((item) => {
           return (
             <a
               key={item.href}
