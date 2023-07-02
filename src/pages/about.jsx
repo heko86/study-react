@@ -1,7 +1,7 @@
 import { Inter } from "next/font/google";
 import { Main } from "src/components/Main";
 import { Header } from "src/components/Header";
-import { useBgLightBlue } from "src/hooks/useBgLightBlue";
+import { useBgLightBlue } from "src/hooks/useBgColor";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -15,7 +15,6 @@ export default function About({
   handleChange,
   handleAdd,
 }) {
-  useBgLightBlue();
   return (
     <>
       <Header />
