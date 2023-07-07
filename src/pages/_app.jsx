@@ -1,4 +1,4 @@
-import "@/styles/globals.css";
+import "../styles/globals.css";
 import Head from "next/head";
 import { useBgColor } from "src/hooks/useBgColor";
 import { useCounter } from "src/hooks/useCounter";

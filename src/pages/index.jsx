@@ -1,35 +1,32 @@
 /* eslint-disable @next/next/no-html-link-for-pages */
 
+import { useCallback, useEffect, useState } from "react";
 import { Header } from "src/components/Header";
 import { Main } from "src/components/Main";
 
 const Home = (props) => {
-  const {
-    count,
-    isShow,
-    handleClick,
-    handlDisplay,
-    text,
-    array,
-    handleChange,
-    handleAdd,
-  } = props;
+  const [posts, setPosts] = useState([]);
 
+  const getPosts = useCallback(async () => {
+    const res = await fetch("https://jsonplaceholder.typicode.com/posts");
+    const json = await res.json();
+    setPosts(json);
+  }, []);
+
+  useEffect(() => {
+    getPosts();
+  }, [getPosts]);
+  console.log(posts);
   return (
     <>
       <Header />
-      {isShow ? <h1>{count}</h1> : null}
-      <button onClick={handleClick}>ボタン</button>
-      <button onClick={handlDisplay}>{isShow ? "非表示" : "表示"}</button>
-
-      <input type="text" value={text} onChange={handleChange} />
-      <button onClick={handleAdd}>追加</button>
-      <ul>
-        {array.map((item) => {
-          return <li key={item}>{item}</li>;
-        })}
-      </ul>
-
+      {posts.length > 0 ? (
+        <ol>
+          {posts.map((post) => {
+            return <li key={post.id}>{post.title}</li>;
+          })}
+        </ol>
+      ) : null}
       <Main page="Index" />
     </>
   );
