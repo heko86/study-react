@@ -17,13 +17,6 @@ export const useCounter = () => {
     },
     [count]
   );
-  useEffect(() => {
-    console.log(`マウント時${count}`);
-
-    return () => {
-      console.log(`アンマウント時${count}`);
-    };
-  }, [count]);
 
   const handlDisplay = useCallback((e) => {
     setIsShow((prevIsShow) => !prevIsShow);
