@@ -1,7 +1,7 @@
 import Link from "next/link";
 import { usePosts } from "src/hooks/usePosts";
 
-const Posts = () => {
+export const Posts = () => {
   const { data, error, isLoading, isEmpty } = usePosts();
 
   if (isLoading) {
@@ -27,4 +27,3 @@ const Posts = () => {
     </>
   );
 };
-export default Posts;
