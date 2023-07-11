@@ -1,5 +1,4 @@
 import { Header } from "src/components/Header";
-import { Main } from "src/components/Main";
 import Posts from "src/components/Posts";
 
 const Home = () => {
@@ -7,7 +6,6 @@ const Home = () => {
     <>
       <Header />
       <Posts />
-      <Main page="Index" />
     </>
   );
 };
