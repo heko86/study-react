@@ -1,8 +1,8 @@
 import Link from "next/link";
-import { UseComments } from "src/hooks/useComments";
+import { useComments } from "src/hooks/useFetchArrary";
 
 export const CommentsComponents = () => {
-  const { data, error, isLoading, isEmpty } = UseComments();
+  const { data, error, isLoading, isEmpty } = useComments();
 
   if (isLoading) {
     return <p>Loading...</p>;
